@@ -1,11 +1,9 @@
 package com.test;
 
-import java.io.File;
-import java.util.Date;
-
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.browser.Browser;
-import org.eclipse.swt.browser.BrowserFunction;
+import org.eclipse.swt.events.ShellAdapter;
+import org.eclipse.swt.events.ShellEvent;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Display;
@@ -39,6 +37,13 @@ public class RichClient {
     browserLayout.grabExcessVerticalSpace = true;
     browser.setLayoutData(browserLayout);
 
+    // Detect [X] or ALT-F4 or something that kills this window...
+    shell.addShellListener( new ShellAdapter() {
+      public void shellClosed( ShellEvent e ) {
+        onClose();
+      }
+    } );
+
     browser.setUrl(url);
 
     System.out.println("browser initialized");
@@ -50,5 +55,19 @@ public class RichClient {
       }
     }
     display.dispose();
+  }
+
+  public void onClose() {
+    shell.dispose();
+  }
+
+  public void close(){
+    // Run in Display thread
+    display.asyncExec(new Runnable() {
+      @Override
+      public void run() {
+        shell.close();
+      }
+    });
   }
 }

@@ -5,6 +5,7 @@
   "appjar": "target/uber-thin-web-desktop-1.0-SNAPSHOT.jar",
   "mainclass": "com/test/Start",
   "vmargs": [
+    "-XstartOnFirstThread"
   ],
   "resources": [
     "packr/icons.icns",
