@@ -1,3 +1,3 @@
 
 
-To run, use 'mvn exec:exec'
+To run, use 'mvn package exec:exec'
