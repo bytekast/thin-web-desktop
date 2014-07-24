@@ -12,7 +12,6 @@
     "packr/app.sh",
     "packr/README"
   ],
-  //"minimizejre": "soft",
   "outdir": "thinwebdesktop.app"
 }
 
