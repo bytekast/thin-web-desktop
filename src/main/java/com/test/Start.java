@@ -56,7 +56,7 @@ public class Start {
             if(Desktop.isDesktopSupported()){
               try {
                 //Desktop.getDesktop().browse(new URI("http://localhost:3388/api"));
-                new RichClient("http://localhost:3388/api");
+                new RichClient("http://localhost:3388/jarstatic/angularjs/index.html");
               }
               catch (Exception e) {
                 e.printStackTrace();
