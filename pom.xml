@@ -2,13 +2,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.grizzly.samples</groupId>
-    <artifactId>jersey1-grizzly2-spring</artifactId>
+    <groupId>org.bytekast.poc</groupId>
+    <artifactId>thin-web-desktop</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>jersey1-grizzly2-spring</name>
-    <url>https://github.com/oleksiys/samples</url>
+    <name>thin-web-desktop</name>
+    <url>https://github.com/bytekast/thin-web-desktop</url>
     <build>
         <defaultGoal>install</defaultGoal>
         <resources>
@@ -39,31 +39,6 @@
                       </arguments>
                 </configuration>
             </plugin>
-
-            <!--
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-assembly-plugin</artifactId>
-               <executions>
-                <execution>
-                  <phase>package</phase>
-                  <goals>
-                    <goal>single</goal>
-                  </goals>
-                </execution>
-              </executions>
-              <configuration>
-                <descriptorRefs>
-                  <descriptorRef>jar-with-dependencies</descriptorRef>
-                </descriptorRefs>
-                <archive>
-                  <manifest>
-                    <mainClass>com.test.Start</mainClass>
-                  </manifest>
-                </archive>
-              </configuration>
-            </plugin>
-            -->
 
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>

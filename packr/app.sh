@@ -3,4 +3,4 @@ BASEDIR=`dirname $0`
 exec java \
      -d64 \
      -XstartOnFirstThread \
-     -jar $BASEDIR/uber-jersey1-grizzly2-spring-1.0-SNAPSHOT.jar
+     -jar $BASEDIR/uber-thin-web-desktop-1.0-SNAPSHOT.jar

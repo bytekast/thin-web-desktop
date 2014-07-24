@@ -1,8 +1,8 @@
 {
   "platform": "mac",
-  "jdk": "/Users/oragon/Downloads/archives/openjdk-1.7.0-u60-unofficial-macosx-x86_64-image.zip",
-  "executable": "myapp",
-  "appjar": "target/uber-jersey1-grizzly2-spring-1.0-SNAPSHOT.jar",
+  "jdk": "/Users/rbelen/Downloads/archives/openjdk-1.7.0-u60-unofficial-macosx-x86_64-image.zip",
+  "executable": "thinwebdesktop",
+  "appjar": "target/uber-thin-web-desktop-1.0-SNAPSHOT.jar",
   "mainclass": "com/test/Start",
   "vmargs": [
   ],
@@ -11,6 +11,6 @@
     "packr/app.sh"
   ],
   "minimizejre": "soft",
-  "outdir": "myapp.app"
+  "outdir": "thinwebdesktop.app"
 }
 
