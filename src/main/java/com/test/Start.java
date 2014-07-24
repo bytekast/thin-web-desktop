@@ -23,8 +23,6 @@ import org.glassfish.grizzly.http.server.StaticHttpHandler;
  * The sample demonstrates how to make Jersey-Spring
  * integration work on top of Grizzly 2, including static pages served from
  * a folder or from within a jar file.
- * 
- * @author Alexey Stashok
  */
 public class Start {
 
