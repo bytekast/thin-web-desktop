@@ -1,0 +1,6 @@
+Instructions:
+
+Move icons.icns to ../Resources
+Edit ../Info.plist - Set 'Executable file' property to 'app.sh'
+chmod +x app.sh
+chmod +x jre/bin/*

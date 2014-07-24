@@ -9,9 +9,10 @@
   ],
   "resources": [
     "packr/icons.icns",
-    "packr/app.sh"
+    "packr/app.sh",
+    "packr/README"
   ],
-  "minimizejre": "soft",
+  //"minimizejre": "soft",
   "outdir": "thinwebdesktop.app"
 }
 
