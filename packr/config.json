@@ -1,0 +1,16 @@
+{
+  "platform": "mac",
+  "jdk": "/Users/oragon/Downloads/archives/openjdk-1.7.0-u60-unofficial-macosx-x86_64-image.zip",
+  "executable": "myapp",
+  "appjar": "target/uber-jersey1-grizzly2-spring-1.0-SNAPSHOT.jar",
+  "mainclass": "com/test/Start",
+  "vmargs": [
+  ],
+  "resources": [
+    "packr/icons.icns",
+    "packr/app.sh"
+  ],
+  "minimizejre": "soft",
+  "outdir": "myapp.app"
+}
+
