@@ -25,10 +25,14 @@ public class JFXApp extends javafx.application.Application {
     //final String html = "htmlchess/example.html";
     //final java.net.URI uri = java.nio.file.Paths.get(html).toAbsolutePath().toUri();
 
+    int port = server.getPort();
+    String url = "http://localhost:" + port + "/jarstatic/angularjs/index.html";
+    System.out.println(url);
+
     // create WebView with specified local content
     final javafx.scene.web.WebView root = new javafx.scene.web.WebView();
     root.getEngine().setJavaScriptEnabled(true);
-    root.getEngine().load("http://localhost:3388/jarstatic/angularjs/index.html");
+    root.getEngine().load(url);
     //root.getEngine().load(uri.toString());
     //root.setZoom(javafx.stage.Screen.getPrimary().getDpi() / 96);
 

@@ -82,7 +82,10 @@ public class SWTApp {
 
     if (Desktop.isDesktopSupported()) {
       try {
-        new SWTApp("http://localhost:3388/jarstatic/angularjs/index.html") {
+        final int port = server.getPort();
+        final String url = "http://localhost:" + port + "/jarstatic/angularjs/index.html";
+        System.out.println(url);
+        new SWTApp(url) {
           @Override
           public void onClose() {
             super.onClose();

@@ -7,17 +7,25 @@ import org.glassfish.grizzly.http.server.NetworkListener;
 import org.glassfish.grizzly.http.server.StaticHttpHandler;
 import org.glassfish.grizzly.servlet.ServletRegistration;
 import org.glassfish.grizzly.servlet.WebappContext;
+import org.springframework.util.SocketUtils;
 
 import java.io.IOException;
 
 
 public class WebServer {
 
-  private HttpServer server = new HttpServer();;
+  private HttpServer server = new HttpServer();
+
+  private int port;
+
+  public int getPort() {
+    return port;
+  }
 
   public void start() throws IOException {
 
-    NetworkListener listener = new NetworkListener("grizzly2", "localhost", 3388);
+    NetworkListener listener = new NetworkListener("grizzly2", "localhost", SocketUtils.findAvailableTcpPort());
+    port = listener.getPort();
     server.addListener(listener);
 
     // Initialize and add Spring-aware Jersey resource
