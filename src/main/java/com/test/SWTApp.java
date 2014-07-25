@@ -9,17 +9,21 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
-public class RichClient {
+import java.awt.*;
+import java.io.IOException;
+
+public class SWTApp {
+
   private static final int APP_HEIGHT = 600;
   private static final int APP_WIDTH = 800;
-  private static final String APP_TITLE = "Standalone Java App";
+  private static final String APP_TITLE = "SWTApp";
 
   private Shell shell;
   private Display display;
   private Browser browser;
   private GridData browserLayout;
 
-  public RichClient(final String url){
+  public SWTApp(final String url){
     initializeApplication(url);
   }
 
@@ -69,5 +73,27 @@ public class RichClient {
         shell.close();
       }
     });
+  }
+
+  public static void main(String[] args) throws IOException {
+
+    final WebServer server = new WebServer();
+    server.start();
+
+    if (Desktop.isDesktopSupported()) {
+      try {
+        new SWTApp("http://localhost:3388/jarstatic/angularjs/index.html") {
+          @Override
+          public void onClose() {
+            super.onClose();
+            server.stop();
+          }
+        };
+      }
+      catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
+
   }
 }

@@ -40,7 +40,7 @@
                       <argument>-X${swt.jvm.argument}</argument>
                       <argument>-classpath</argument>
                       <classpath/>
-                      <argument>com.test.Start</argument>
+                      <argument>com.test.SWTApp</argument>
                       </arguments>
                 </configuration>
             </plugin>
@@ -57,7 +57,7 @@
                   <configuration>
                     <transformers>
                       <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                        <mainClass>com.test.Start</mainClass>
+                        <mainClass>com.test.SWTApp</mainClass>
                       </transformer>
                       <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
                         <resource>META-INF/spring.handlers</resource>
@@ -80,7 +80,7 @@
               <version>2.0</version>
               <configuration>
 
-                <mainClass>com.test.ThinView</mainClass>
+                <mainClass>com.test.JFXApp</mainClass>
 
                 <!-- only required if signing the jar file -->
                 <keyStoreAlias>example-user</keyStoreAlias>
