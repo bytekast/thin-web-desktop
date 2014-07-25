@@ -7,12 +7,16 @@ import org.glassfish.grizzly.http.server.NetworkListener;
 import org.glassfish.grizzly.http.server.StaticHttpHandler;
 import org.glassfish.grizzly.servlet.ServletRegistration;
 import org.glassfish.grizzly.servlet.WebappContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.util.SocketUtils;
 
 import java.io.IOException;
 
 
 public class WebServer {
+
+  private static final Logger log = LoggerFactory.getLogger(WebServer.class);
 
   private HttpServer server = new HttpServer();
 
@@ -46,6 +50,7 @@ public class WebServer {
     server.getServerConfiguration().addHttpHandler(new CLStaticHttpHandler(WebServer.class.getClassLoader(), "webapp/static2/"), "/jarstatic");
 
     try {
+      log.info("Starting server on port: " + getPort());
       server.start();
     }
     finally {
@@ -54,6 +59,7 @@ public class WebServer {
   }
 
   public void stop(){
+    log.info("Shutting down server on port: " + getPort());
     server.shutdownNow();
   }
 }

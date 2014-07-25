@@ -3,11 +3,15 @@ package com.test;
 
 import javafx.event.EventHandler;
 import javafx.stage.WindowEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author Rowell Belen
  */
 public class JFXApp extends javafx.application.Application {
+
+  private static final Logger log = LoggerFactory.getLogger(JFXApp.class);
 
   private WebServer server = new WebServer();
 
@@ -27,7 +31,7 @@ public class JFXApp extends javafx.application.Application {
 
     int port = server.getPort();
     String url = "http://localhost:" + port + "/jarstatic/angularjs/index.html";
-    System.out.println(url);
+    log.info(url);
 
     // create WebView with specified local content
     final javafx.scene.web.WebView root = new javafx.scene.web.WebView();

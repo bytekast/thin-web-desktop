@@ -8,11 +8,15 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.awt.*;
 import java.io.IOException;
 
 public class SWTApp {
+
+  private static final Logger log = LoggerFactory.getLogger(SWTApp.class);
 
   private static final int APP_HEIGHT = 600;
   private static final int APP_WIDTH = 800;
@@ -50,7 +54,7 @@ public class SWTApp {
 
     browser.setUrl(url);
 
-    System.out.println("browser initialized");
+    log.info("Browser initialized...");
 
     shell.open();
     while (!shell.isDisposed()) {
@@ -84,7 +88,7 @@ public class SWTApp {
       try {
         final int port = server.getPort();
         final String url = "http://localhost:" + port + "/jarstatic/angularjs/index.html";
-        System.out.println(url);
+        log.info(url);
         new SWTApp(url) {
           @Override
           public void onClose() {
