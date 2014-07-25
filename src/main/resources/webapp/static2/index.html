@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <div>Static content 2</div>
-    </body>
+<html ng-app>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+
+</head>
+<body>
+Write some text in textbox:
+<input type="text" ng-model="sometext" />
+
+<h1>Hello {{ sometext }}</h1>
+</body>
 </html>

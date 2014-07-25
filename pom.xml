@@ -7,6 +7,11 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <organization>
+      <!-- Used as the 'Vendor' for JNLP generation -->
+      <name>ByteKast Software, LLC.</name>
+    </organization>
+
     <name>thin-web-desktop</name>
     <url>https://github.com/bytekast/thin-web-desktop</url>
     <build>
@@ -35,7 +40,7 @@
                       <argument>-X${swt.jvm.argument}</argument>
                       <argument>-classpath</argument>
                       <classpath/>
-                      <argument>com.test.Start</argument>    
+                      <argument>com.test.Start</argument>
                       </arguments>
                 </configuration>
             </plugin>
@@ -69,6 +74,22 @@
               </configuration>
             </plugin>
 
+            <plugin>
+              <groupId>com.zenjava</groupId>
+              <artifactId>javafx-maven-plugin</artifactId>
+              <version>2.0</version>
+              <configuration>
+
+                <mainClass>com.test.ThinView</mainClass>
+
+                <!-- only required if signing the jar file -->
+                <keyStoreAlias>example-user</keyStoreAlias>
+                <keyStorePassword>example-password</keyStorePassword>
+                <allPermissions>true</allPermissions>
+
+              </configuration>
+            </plugin>
+
         </plugins>
     </build>
     
@@ -78,6 +99,7 @@
         <grizzly-version>2.3.12</grizzly-version>
         <org.springframework-version>4.0.2.RELEASE</org.springframework-version>
         <swt.jvm.argument>startOnFirstThread</swt.jvm.argument>
+        <slf4j.version>1.6.1</slf4j.version>
     </properties>
 
     <dependencies>
@@ -193,6 +215,48 @@
             <artifactId>org.eclipse.swt.cocoa.macosx.x86_64</artifactId>
             <version>3.8</version>
         </dependency>
+
+
+        <!-- MigLayout -->
+
+        <dependency>
+          <groupId>com.miglayout</groupId>
+          <artifactId>miglayout-javafx</artifactId>
+          <version>4.2</version>
+        </dependency>
+
+        <!-- Apache Commons -->
+
+        <dependency>
+          <groupId>commons-lang</groupId>
+          <artifactId>commons-lang</artifactId>
+          <version>2.6</version>
+        </dependency>
+
+        <!-- Logging  -->
+
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>jcl-over-slf4j</artifactId>
+          <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+          <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+          <version>1.2.16</version>
+        </dependency>
+
+
     </dependencies>
 
     <repositories>
