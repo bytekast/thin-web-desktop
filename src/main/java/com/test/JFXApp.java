@@ -1,6 +1,7 @@
 package com.test;
 
 
+import com.aquafx_project.AquaFx;
 import javafx.event.EventHandler;
 import javafx.stage.WindowEvent;
 import org.slf4j.Logger;
@@ -30,7 +31,7 @@ public class JFXApp extends javafx.application.Application {
     //final java.net.URI uri = java.nio.file.Paths.get(html).toAbsolutePath().toUri();
 
     int port = server.getPort();
-    String url = "http://localhost:" + port + "/jarstatic/angularjs/index.html";
+    String url = "http://localhost:" + port + "/jarstatic/MyApp/index.html";
     log.info(url);
 
     // create WebView with specified local content
@@ -51,6 +52,8 @@ public class JFXApp extends javafx.application.Application {
         server.stop();
       }
     });
+
+    AquaFx.style();
   }
 
   public static void main(String[] args) {

@@ -12,6 +12,15 @@
       <name>ByteKast Software, LLC.</name>
     </organization>
 
+    <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <jersey-version>1.8</jersey-version>
+      <grizzly-version>2.3.14</grizzly-version>
+      <org.springframework-version>4.0.2.RELEASE</org.springframework-version>
+      <swt.jvm.argument>startOnFirstThread</swt.jvm.argument>
+      <slf4j.version>1.6.1</slf4j.version>
+    </properties>
+
     <name>thin-web-desktop</name>
     <url>https://github.com/bytekast/thin-web-desktop</url>
     <build>
@@ -92,15 +101,6 @@
 
         </plugins>
     </build>
-    
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jersey-version>1.8</jersey-version>
-        <grizzly-version>2.3.12</grizzly-version>
-        <org.springframework-version>4.0.2.RELEASE</org.springframework-version>
-        <swt.jvm.argument>startOnFirstThread</swt.jvm.argument>
-        <slf4j.version>1.6.1</slf4j.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -254,6 +254,13 @@
           <groupId>log4j</groupId>
           <artifactId>log4j</artifactId>
           <version>1.2.16</version>
+        </dependency>
+
+
+        <dependency>
+          <groupId>com.aquafx-project</groupId>
+          <artifactId>aquafx</artifactId>
+          <version>0.1</version>
         </dependency>
 
 
