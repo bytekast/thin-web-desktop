@@ -46,10 +46,12 @@
                 <configuration>
                     <executable>java</executable>
                     <arguments>
+                      <!--
                       <argument>-X${swt.jvm.argument}</argument>
+                      -->
                       <argument>-classpath</argument>
                       <classpath/>
-                      <argument>com.test.SWTApp</argument>
+                      <argument>com.test.JFXApp</argument>
                       </arguments>
                 </configuration>
             </plugin>
