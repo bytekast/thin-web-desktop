@@ -1,4 +1,5 @@
 
+![](https://travis-ci.org/bytekast/thin-web-desktop.svg?branch=master)
 
 This project requires Maven 3 and Java 8 (for better JFX WebView support).
 
